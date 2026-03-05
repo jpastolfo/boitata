@@ -2,7 +2,7 @@ import numpy as np
 from .ray import Ray
 
 class PointSource:
-    def __init__(self,position=(0,0,0),n_rays=10,divergence=0.01):
+    def __init__(self,position=(0,0,0),n_rays=10,divergence=0.1):
         self.position = np.array(position)
         self.n_rays = n_rays
         self.divergence = divergence
@@ -14,8 +14,9 @@ class PointSource:
             dy = np.random.normal(scale = self.divergence)
 
             direction = np.array([dx,dy,1.0])
+            direction = direction/np.linalg.norm(direction)
 
-            rays.apend(
+            rays.append(
                 Ray(self.position,direction)
             )
 
