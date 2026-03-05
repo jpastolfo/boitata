@@ -28,7 +28,7 @@ class MainWindow(QMainWindow):
         self.renderer.add_source(self.source)
         self.beamline.generate_rays()
         for ray in self.beamline.rays:
-            ray.propagate(1)
+            ray.propagate(100)
         self.renderer.draw_rays(self.beamline.rays)
     
     def enable_picking(self):
@@ -62,7 +62,7 @@ class MainWindow(QMainWindow):
         rays = self.source.generate_rays()
 
         for ray in rays:
-            ray.propagate(1)
+            ray.propagate(100)
         
         self.renderer.draw_rays(rays)
         self.plotter.render()
