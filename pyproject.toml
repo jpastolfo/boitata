@@ -1,0 +1,10 @@
+[project]
+name = "boitata"
+version = "0.0.1"
+description = "Beamline Optics Interactive Tracer and Trajectory Analyzer"
+authors = [{name = "João"}]
+dependencies = ["numpy", "pyvista","pyqt5"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
